@@ -1,0 +1,37 @@
+<% title("Posts") %>
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+	
+<div class="title-box">
+  <p>
+    <%= link_to "#{post.title}", post_path(post.slug) %> <br/>
+    <span><small><em><%= time_ago_in_words(post.updated_at) %> ago</em></small></span>
+  </p>
+
+</div>
+	
+<% end %>
+	
+<div class="pagination-control text-center">
+  <%= paginate @posts %> 
+</div>
+a
+ <video autoplay></video>
+ 
+    <script>
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+      var constraints = { audio: false, video: true };
+      var video = document.querySelector("video");
+
+      function successCallback(stream) {
+        video.src = window.URL.createObjectURL(stream);
+      }
+
+      function errorCallback(error){
+        console.log("getUserMedia error: ", error);
+      }
+
+      navigator.getUserMedia(constraints, successCallback, errorCallback);
+    </script>
