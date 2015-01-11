@@ -2,7 +2,6 @@ navigator.getUserMedia({ video: true, audio: true }, function(stream) {
   currentUser.stream = stream;
 }, function() {});
  
-// ...
  
 peer = new SimplePeer({ stream: currentUser.stream });
  

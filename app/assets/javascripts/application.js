@@ -17,4 +17,5 @@
 //= require zepto/all
 //= require DataChannel
 //= require common
+//= require PusherChatWidget
 

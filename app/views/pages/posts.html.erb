@@ -16,10 +16,31 @@
 <div class="pagination-control text-center">
   <%= paginate @posts %> 
 </div>
-a
+<div class="col-md-6">
  <video autoplay></video>
- 
-    <script>
+</div>
+<div class="col-md-6">
+	<div class="span5" id="pusher_chat_widget">
+          </div>
+          
+</div> 
+ <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+    
+    $(function() {     
+    var pusher = new Pusher('a8880231a53bf904066d');
+    var chatWidget = new PusherChatWidget(pusher, {
+    chatEndPoint: 'pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb'
+  });
+});
+    
+    
+    
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
       var constraints = { audio: false, video: true };
